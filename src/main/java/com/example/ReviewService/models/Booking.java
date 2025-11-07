@@ -23,4 +23,12 @@ public class Booking extends BaseModal{
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date endTime;
     private long totalDistance;
+
+    @ManyToOne
+    private Driver driver;
+
+    @ManyToOne
+    private Passenger passenger;
+
+
 }
