@@ -14,26 +14,18 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name = "bookingReview")
-public class Review {
-    @Id // primary key
-    @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private Long id;
+@Table(name = "booking_review")
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // In this inheritance type only one giant table has been created and all attributes of parent and child class come in it.
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // parent class also has dedicated table and child has their own table.
+@Inheritance(strategy = InheritanceType.JOINED) // no redundancy other than this all same as TABLE_PER_CLASS.
+public class Review extends BaseModal{
+
 
     @Column(nullable = false)
     private String content;
     private Double rating;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @CreatedDate // this tells that only handle while object creation.
-    private Date createdAt;
 
-    @Column(nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate // this tells that only handle while object being modified.
-    private Date updatedAt;
 
 }
