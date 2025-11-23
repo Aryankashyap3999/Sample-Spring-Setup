@@ -17,5 +17,6 @@ public class Course extends BaseModal{
     private String name;
 
     @ManyToMany
+    @Builder.Default
     List<Student> students = new ArrayList<>();
 }

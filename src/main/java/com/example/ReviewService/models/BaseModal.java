@@ -15,7 +15,7 @@ import java.util.Date;
 @Setter
 public abstract class BaseModal {
     @Id // primary key
-    @GeneratedValue( strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)

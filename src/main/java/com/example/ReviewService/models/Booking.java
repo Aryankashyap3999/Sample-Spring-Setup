@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Booking extends BaseModal{
 
-    @OneToOne(cascade = {CascadeType.PERSIST})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private Review review; // has a relationship means composition in that case you have to give annotation for showing relationship
 
     @Enumerated(value = EnumType.STRING)
@@ -24,10 +24,10 @@ public class Booking extends BaseModal{
     private Date endTime;
     private long totalDistance;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Driver driver;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Passenger passenger;
 
 

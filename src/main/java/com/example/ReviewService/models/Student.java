@@ -25,5 +25,6 @@ public class Student extends BaseModal{
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
+    @Builder.Default
     private List<Course> courses = new ArrayList<>();
 }
