@@ -6,10 +6,10 @@ import lombok.*;
 import java.util.Date;
 
 @Entity
-@Getter
 @Setter
 @Builder
 @NoArgsConstructor
+@Getter
 @AllArgsConstructor
 public class Booking extends BaseModal{
 
