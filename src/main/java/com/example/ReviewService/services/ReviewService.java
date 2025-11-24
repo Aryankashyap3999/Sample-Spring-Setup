@@ -58,17 +58,17 @@ public class ReviewService implements CommandLineRunner {
 //        }
 
 
-        List<Long> driverIds = new ArrayList<>(Arrays.asList(1L, 2L, 3L, 8L, 9L, 10L));
-        List<Driver> drivers = driverRepository.findAllByIdIn(driverIds);
-
-//        List<Booking> bookings = bookingRepository.findAllByDriverIn(drivers); // custom implementation for N+1 problem
-
-
-
-        for(Driver driver : drivers) {
-            List<Booking> bookings = driver.getBooking();
-            bookings.forEach(booking -> System.out.println(booking.getId()));
-        }
+//        List<Long> driverIds = new ArrayList<>(Arrays.asList(1L, 2L, 3L, 8L, 9L, 10L));
+//        List<Driver> drivers = driverRepository.findAllByIdIn(driverIds);
+//
+////        List<Booking> bookings = bookingRepository.findAllByDriverIn(drivers); // custom implementation for N+1 problem
+//
+//
+//
+//        for(Driver driver : drivers) {
+//            List<Booking> bookings = driver.getBooking();
+//            bookings.forEach(booking -> System.out.println(booking.getId()));
+//        }
 
     }
 }

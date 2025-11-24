@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DriverRepository extends JpaRepository<Driver, Long> {
-    Optional<Driver> findByIdAndLicenseNumber(Long id, String licenseNumber); // This is for where queries.
+//    Optional<Driver> findByIdAndLicenseNumber(Long id, String licenseNumber); // This is for where queries.
 
 //    @Query(nativeQuery = true, value = "SELECT * FROM Driver WHERE id = :id AND license_number = :license") // Raw mysql query error throw at runtime
 //    Optional<Driver> rawFindByIdAndLicenseNumber(Long id, String license);
@@ -21,6 +21,6 @@ public interface DriverRepository extends JpaRepository<Driver, Long> {
 //    @Query("SELECT new com.example.reviewservice.models.CustomDriver(d.id, d.name) From Driver d where d.licenseNumber = :license and d.id = :id")
 //    CustomDriver hqlFindByIdAndLicense(String license, Long id);
 
-    List<Driver> findAllByIdIn(List<Long> driverIds);
+//    List<Driver> findAllByIdIn(List<Long> driverIds);
 
 }

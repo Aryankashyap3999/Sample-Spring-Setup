@@ -21,11 +21,8 @@ import java.util.Date;
 @Inheritance(strategy = InheritanceType.JOINED) // no redundancy other than this all same as TABLE_PER_CLASS.
 public class Review extends BaseModal{
 
-
     @Column(nullable = false)
     private String content;
     private Double rating;
-
-
 
 }
